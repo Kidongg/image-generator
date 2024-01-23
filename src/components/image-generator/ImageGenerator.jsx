@@ -34,11 +34,10 @@ const ImageGenerator = () => {
     );
 
     const data = await response.json();
-    console.log("data: ", data);
+    // console.log("data: ", data);
 
-    // const dataArray = data.data;
-    // setImageUrl(dataArray[0].url);
-
+    const dataArray = data.data;
+    setImageUrl(dataArray[0].url);
     setLoading(false);
   };
 
@@ -46,7 +45,7 @@ const ImageGenerator = () => {
     <div className="ai-image-generator">
       {/* 헤더 */}
       <div className="header">
-        AI image<span>generator</span>
+        AI 이미지<span>생성기</span>
       </div>
       {/* 이미지 */}
       <div className="img-loading">
@@ -56,7 +55,7 @@ const ImageGenerator = () => {
         <div className="loading">
           <div className={loading ? "loading-bar-full" : "loading-bar"}></div>
           <div className={loading ? "loading-text" : "display-none"}>
-            Loading...
+            로딩 중...
           </div>
         </div>
       </div>
@@ -69,7 +68,7 @@ const ImageGenerator = () => {
           ref={inputRef}
         />
         <div className="generate-btn" onClick={imageGenerator}>
-          Generate
+          생성하기
         </div>
       </div>
     </div>
